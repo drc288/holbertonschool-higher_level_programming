@@ -10,23 +10,21 @@
 int check_cycle(listint_t *list)
 {
 	listint_t *tmp1 = NULL, *tmp2 = NULL;
-	int value = 0, id = 0;
 
 	if (list == NULL)
 		return (0);
 	tmp1 = list;
 	tmp2 = list;
-	while (tmp2)
+	while (tmp2 != NULL && tmp2->next->next != NULL)
 	{
-		if (tmp1 == tmp2 && id != 0)
+		tmp1 = tmp1->next;
+		tmp2 = tmp2->next->next;
+
+		if (tmp1 == tmp2)
 		{
 			return (1);
 		}
-
-		tmp2 = tmp2->next->next;
-		tmp1 = tmp1->next;
-		id++;
 	}
 
-	return (value);
+	return (0);
 }
