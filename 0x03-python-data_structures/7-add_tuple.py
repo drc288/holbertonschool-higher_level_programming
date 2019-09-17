@@ -1,18 +1,17 @@
 #!/usr/bin/python3
 def add_tuple(tuple_a=(), tuple_b=()):
-    a = tuple_a
-    b = tuple_b
-    suma = 0
-    suma2 = 0
     tupla = ()
-    if len(b) == 0:
-        b = (0,0)
-        tupla = (a[0] + b[0], a[1] + b[1])
-        return(tupla)
-    elif len(b) < 2:
-        b = b + (0,)
-        suma = a[0] + b[0]
-        tupla = (suma, a[1] + b[1])
-        return (tupla)
-    tupla = (a[0] + b[0], a[1] + b[1])
+    a = len(tuple_a)
+    b = len(tuple_b)
+    if b == 0:
+        tuple_b = (0,0)
+    elif b < 2:
+        tuple_b = tuple_b + (0,)
+
+    if a == 0:
+        tuple_a = (0,0)
+    elif a < 2:
+        tuple_a = tuple_a + (0,)
+
+    tupla = (tuple_a[0] + tuple_b[0], tuple_a[1] + tuple_b[1])
     return (tupla)
