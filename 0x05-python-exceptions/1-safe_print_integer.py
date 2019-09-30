@@ -4,7 +4,5 @@ def safe_print_integer(value):
         if value != chr:
             print("{:d}".format(value))
             return True
-        else:
-            return False
-    except ValueError:
+    except:
         return False
