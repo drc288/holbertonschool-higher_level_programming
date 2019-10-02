@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 class Square:
     __size = None
-    __position = None
 
     def __init__(self, size=0, position=(0, 0)):
         self.__position = position
