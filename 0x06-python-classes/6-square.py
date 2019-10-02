@@ -37,7 +37,7 @@ class Square:
         elif value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self.__position = position
+            self.__position = value
 
     """For Size"""
     @property
