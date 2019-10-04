@@ -1,0 +1,38 @@
+==============================
+How to use 3-say_my_name.py
+==============================
+
+This library is very simple, since it only has one function called
+``say_my_name(first_name, last_name="")``.
+
+Operations
+==========
+
+``say_my_name(first_name, last_name="")`` print 
+´´My name is <first name> <last name>´´.
+
+0) Import module in mode interactive:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+1) Say:
+
+    >>> say_my_name("Jhon", "Smith")
+    My name is Jhon Smith
+
+2) Say:
+
+    >>> say_my_name("Bob")
+    My name is Bob 
+
+3) Say error:
+
+    >>> say_my_name("Bob", 12)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+4) Say error:
+
+    >>> say_my_name(12, "Smith")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
