@@ -1,0 +1,63 @@
+==============================
+How to use 2-matrix_divided.py
+==============================
+
+This library is very simple, since it only has one function called
+``matrix_divided(matrix, div)``.
+
+Operations
+==========
+
+``matrix_divided(matrix, div)`` returns a new matrix with contain the 
+division of the number of the original matrix.
+
+0) Create the matrix:
+    >>> matrix = [
+    ...     [1, 2, 3],
+    ...     [4, 5, 6]
+    ... ]
+
+1) import the module:
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+2) if the matrix is None:
+
+    >>> matrix_divided(None)
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+3) if div is a string:
+
+    >>> matrix_divided(matrix, "div")
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+4) divide by 3:
+
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+5) error matrix:
+
+    >>> matrix_error = [
+    ...     ["a", 1, 2]
+    ... ]
+
+6) prube matrix_error:
+
+    >>> matrix_divided(matrix_error, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+7) matrix with floats:
+
+    >>> matrix_float = [
+    ...     [10,2 , 13,5, 19,5]
+    ... ]
+
+8) probe matrix_float:
+
+    >>> matrix_divided(matrix_float, 3)
+    [[3.33, 0.67, 4.33, 1.67, 6.33, 1.67]]
+
