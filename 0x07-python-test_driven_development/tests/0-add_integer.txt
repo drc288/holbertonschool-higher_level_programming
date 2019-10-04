@@ -1,8 +1,9 @@
-============================
- How to use 0-add_integer.py
-============================
+===========================
+How to use 0-add_integer.py
+===========================
+
 This library is very simple, since it only has one function called
-``add_integer()``.
+``add_integer(int, opt(int))``.
 
 Operations
 ==========
