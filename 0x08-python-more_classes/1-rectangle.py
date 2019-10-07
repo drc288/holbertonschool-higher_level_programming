@@ -1,5 +1,15 @@
 #!/usr/bin/python3
+"""
+    Rectangle - create a object with contain the width and the height
+    in a rectangle
+    >>> r = Rectangle(2, 3)
+"""
+
+
 class Rectangle:
+    """
+    Rectangle: create width=0, height=0
+    """
     def __init__(self, width=0, height=0):
         self.height = height
         self.width = width
@@ -31,4 +41,3 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         else:
             self.__height = value
-
