@@ -19,7 +19,6 @@ class Rectangle:
         self.width = width
 
     """ Method """
-    
     def area(self):
         a = int(self.height * self.width)
         return (a)
