@@ -8,8 +8,8 @@ This library is very simple, since it only has one function called
 Operations
 ==========
 
-``add_integer()`` returns the sum of its arguments.  For numbers,
-that value is equivalent to using the ``+`` operator.
+``text_indentation("""text""")`` print the text with with the rules
+?, : and .
 
 0) import the module:
 
@@ -46,6 +46,12 @@ that value is equivalent to using the ``+`` operator.
 5) combine:
 
     >>> text_indentation(15)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+6) None:
+
+    >>> text_indentation([])
     Traceback (most recent call last):
     TypeError: text must be a string
 
