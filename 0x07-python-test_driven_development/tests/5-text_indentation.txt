@@ -55,3 +55,6 @@ Operations
     Traceback (most recent call last):
     TypeError: text must be a string
 
+    >>> text_indentation((0, ))
+    Traceback (most recent call last):
+    TypeError: text must be a string
