@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 """ BaseGeometry - create a empty object BaseGeometry
 """
 class BaseGeometry:
@@ -18,6 +17,8 @@ class BaseGeometry:
 """ Rectangle - unherits BaseGeometry
 """
 class Rectangle(BaseGeometry):
+    """ __init__ - initializate the width and height
+    """
     def __init__(self, width, height):
         super().integer_validator("width", width)
         self.__width = width
