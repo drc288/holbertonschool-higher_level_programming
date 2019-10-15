@@ -10,5 +10,5 @@ class MyClass2(object):
         pass
 
 print(lookup(MyClass2))
-"""print(lookup(MyClass2))"""
-"""print(lookup(int))"""
+print(lookup(MyClass2))
+print(lookup(int))
