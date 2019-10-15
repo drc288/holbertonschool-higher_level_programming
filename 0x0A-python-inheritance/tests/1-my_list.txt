@@ -1,17 +1,16 @@
-================================
-How to use 5-text_indentation.py
-================================
+========================
+How to use 1-my-list.txt
+========================
 
 This library is very simple, since it only has one function called
-``text_indentation("""text""")``.
+``MyList()``.
 
 Operations
 ==========
 
-``text_indentation("""text""")`` print the text with with the rules
-?, : and .
+``MyList()`` Ereda the list properties
 
-0) import the module:
+Init the test:
 
     >>> MyList = __import__('1-my_list').MyList
     >>> my_list = MyList()
