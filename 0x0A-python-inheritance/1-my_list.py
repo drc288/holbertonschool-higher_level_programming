@@ -6,10 +6,14 @@
     >>> print(my_list)
     [1]
 """
+
+
 class MyList(list):
     """
         print_sorted - print the sorted list
     """
+    def __init__(self):
+        super().__init__(self)
+
     def print_sorted(self):
         print(sorted(self))
-
