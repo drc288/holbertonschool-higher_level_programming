@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """ BaseGeometry - create a empty object BaseGeometry
 """
+
+
 class BaseGeometry:
     """ area - get the area (error Exeption)
     """
@@ -14,15 +16,18 @@ class BaseGeometry:
         elif value <= 0:
             raise ValueError("{:s} must be greater than 0".format(str(name)))
 
+
 """ Rectangle - unherits BaseGeometry
 """
+
+
 class Rectangle(BaseGeometry):
     """ __init__ - initializate the width and height
     """
     def __init__(self, width, height):
         super().integer_validator("width", width)
         self.__width = width
-        super().integer_validator("height" ,height)
+        super().integer_validator("height", height)
         self.__height = height
     """ __str__ - return a example code of rectangle
     """
