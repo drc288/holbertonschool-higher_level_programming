@@ -19,4 +19,3 @@ class Student:
             if key in self.__dict__.keys():
                 tmp_dict[key] = self.__dict__[key]
         return tmp_dict
-        
