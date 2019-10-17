@@ -1,4 +1,5 @@
-#!/usr/bin/python3 
+#!/usr/bin/python3
+""" Init program  - run add item """
 import json
 import sys
 load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
