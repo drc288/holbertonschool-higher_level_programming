@@ -39,14 +39,32 @@ class Rectangle(Base):
         display - get the display for height and width
         """
         space = self.x
-        new_line = self.y
-        if new_line != 0:
-            for i in range(new_line):
+        n_line = self.y
+        if n_line != 0:
+            for i in range(n_line):
                 print()
         for i in range(self.height):
             if space != 0:
                 print(" " * space, end="")
             print("#" * self.width)
+
+    def update(self, *args):
+        """
+        update - update the Rectangle
+        """
+        # Get the len of args
+        len_args = len(args)
+        for i, data in enumerate(args):
+            if i == 0:
+                self.id = data
+            if i == 1:
+                self.width = data
+            if i == 2:
+                self.height = data
+            if i == 3:
+                self.x = data
+            if i == 4:
+                self.y = data
 
     @property
     def width(self):
