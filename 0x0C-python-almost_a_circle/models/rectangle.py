@@ -7,12 +7,10 @@ in a rectangle and create two method
 
 
 class Rectangle(Base):
-    """
-    Init the constructor
-    """
     def __init__(self, width, height, x=0, y=0, id=None):
         """
-        Private instance attributes change
+        Init the constructor - Private
+        instance attributes change
         the variables to public and return in
         setter and getter the private value
         """
@@ -24,70 +22,76 @@ class Rectangle(Base):
         super().__init__(id)
 
     def __str__(self):
+        """ __str__ - return the rectangle class str """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x,
                                                        self.y, self.width,
                                                        self.height)
-    """
-    area - return the area of height and width
-    """
+
     def area(self):
+        """
+        area - return the area of height and width
+        """
         a = self.height * self.width
         return a
-    """
-    display - get the display for height and width
-    """
+
     def display(self):
+        """
+        display - get the display for height and width
+        """
+        space = self.x
+        new_line = self.y
+        if new_line != 0:
+            for i in range(new_line):
+                print()
         for i in range(self.height):
+            if space != 0:
+                print(" " * space, end="")
             print("#" * self.width)
 
-    """
-    Width - setter and getter
-    for Width, validate the data
-    """
     @property
     def width(self):
-        """ Getter """
+        """
+        Width - Getter for Width
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ Setter """
+        """
+        Width - Setter for Width, validate the data
+        """
         if isinstance(value, str):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
 
-    """
-    Height - setter and getter
-    for Height, validate the data
-    """
     @property
     def height(self):
-        """ Getter """
+        """
+        Height - getter for height
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """ Setter """
+        """ Height - Setter for Height, validate the data"""
         if isinstance(value, str):
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
 
-    """
-    x - setter and getter
-    for x, validate the data
-    """
     @property
     def x(self):
-        """ Getter """
+        """
+        x - setter for x
+        """
         return self.__x
 
     @x.setter
     def x(self, value):
-        """ Setter """
+        """ x - Setter for x, validate the data """
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         if value < 0:
@@ -95,18 +99,16 @@ class Rectangle(Base):
         else:
             self.__x = value
 
-    """
-    y - setter and getter
-    for y, validate the data
-    """
     @property
     def y(self):
-        """ Getter """
+        """
+        y - setter for y
+        """
         return self.__y
 
     @y.setter
     def y(self, value):
-        """ Setter """
+        """ y - Setter for y, validate the data"""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
