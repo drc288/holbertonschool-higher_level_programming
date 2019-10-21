@@ -6,7 +6,8 @@ from models.base import Base
 
 
 class TestBase(unittest.TestCase):
-    """ Test id - test case for id
+    """
+    test_id - test case for id
     """
     def test_id(self):
         print("Test id")
@@ -17,7 +18,7 @@ class TestBase(unittest.TestCase):
         inst_4 = Base(-1)
         inst_5 = Base()
         inst_6 = Base("a")
-        inst_7 = Base({key: 1})
+        inst_7 = Base({id: 1})
         inst_8 = Base(float('NaN'))
         inst_9 = Base([8])
         inst_10 = Base(3.14)
@@ -30,16 +31,16 @@ class TestBase(unittest.TestCase):
         self.assertEqual(inst_4.id, -1)
         self.assertEqual(inst_5.id, 3)
         self.assertEqual(inst_6.id, "a")
-        self.assertEqual(inst_7.id, {key: 1})
+        self.assertEqual(inst_7.id, {id: 1})
         self.assertNotEqual(inst_8.id, inst_8.id)
         self.assertEqual(inst_9.id,[8])
         self.assertEqual(inst_10.id, 3.14)
         self.assertEqual(inst_11.id, (6, 9))
-        self.assertEqual(inst_12.id, (4, 2, 0))
-        
-        
-       
-    
+        self.assertEqual(inst_12.id, {0, 2, 4})
+
+    """
+    test_issubclass - Verify is the class
+    """
     def test_issubclass(self):
         inst_1 = Base()
         """ TEST """
