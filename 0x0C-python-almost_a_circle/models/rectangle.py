@@ -1,13 +1,14 @@
 #!/usr/bin/python3
-from models.base import Base
 """
 Rectangle - create a object with contain the width and the height
 in a rectangle and create two method
 """
+from models.base import Base
 
 
 class Rectangle(Base):
     """ Rectangle """
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         Init the constructor - Private
