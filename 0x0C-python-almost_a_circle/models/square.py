@@ -14,6 +14,7 @@ class Square(Rectangle):
         call the super class
         """
         super().__init__(size, size, x, y)
+        self.size = size
 
     def __str__(self):
         """
