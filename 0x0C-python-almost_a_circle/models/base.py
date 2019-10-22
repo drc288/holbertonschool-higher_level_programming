@@ -63,7 +63,7 @@ class Base:
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1, 1, 1)
         # Or is Square
-        else:
+        elif cls.__name__ == "Square":
             dummy = cls(1, 1, 1)
         # Update the dummy (Rectangle or Square)
         # and update using the public method update
