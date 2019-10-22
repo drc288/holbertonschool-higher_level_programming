@@ -20,6 +20,12 @@ class Square(Rectangle):
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
                                                  self.y, self.size)
     
+    def to_dictionary(self):
+        """
+        to_dictionary - create dictionary for square
+        """
+        return {'id': self.id, 'y': self.y, 'x': self.x, 'size': self.size}
+    
     def update(self, *args, **kwargs):
         """
         update - update the Rectangle, 

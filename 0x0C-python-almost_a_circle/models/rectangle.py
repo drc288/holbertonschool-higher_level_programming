@@ -82,6 +82,12 @@ class Rectangle(Base):
                 if i == 4:
                     self.y = data
 
+    def to_dictionary(self):
+        """
+        to_dictionary - create the iccionary for rectangle
+        """
+        return {'id': self.id, 'y': self.y, 'x': self.x, 'height': self.height, 'width': self.width}
+    
     @property
     def width(self):
         """
