@@ -28,6 +28,15 @@ class Base:
             return []
         return json.dumps(list_dictionaries)
     
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        from_json_string - from json to str
+        """
+        if json_string is None:
+            return []
+        return json.loads(json_string)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """
@@ -43,4 +52,39 @@ class Base:
                     data_json = obj.to_dictionary()
                     n_list.append(data_json)
                 f.write(cls.to_json_string(n_list))
+    
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        create - create a new instance
+        """
+        # Verify if the cls is Rectangle
+        if cls.__name__ == "Rectangle":
+            cls_name = cls(1, 1, 1, 1)
+        # Or is Square
+        else:
+            cls_name = cls(1, 1, 1)
+        # Update the cls_name (Rectangle or Square)
+        # and update using the public method update
+        cls_name.update(**dictionary)
+        return cls_name
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        load_from_file - load the file and return a new list to exec
+        """
+        file_name = str(cls.__name__) + ".json"
+        try:
+            with open(file_name, mode="r", encoding="utf-8") as f:
+                new_list = []
+                read_file = f.read()
+                new_file = cls.from_json_string(read_file)
+                for dic in new_file:
+                    new_inst = cls.create(**dic)
+                    new_list.append(new_inst)
+                return new_list
+        except:
+            return []
+                    
                 
