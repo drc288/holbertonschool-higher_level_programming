@@ -7,6 +7,7 @@ in a rectangle and create two method
 
 
 class Rectangle(Base):
+    """ Rectangle """
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         Init the constructor - Private
@@ -52,7 +53,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """
-        update - update the Rectangle, 
+        update - update the Rectangle
         """
         # Get the len of args
         len_args = len(args)
@@ -86,8 +87,9 @@ class Rectangle(Base):
         """
         to_dictionary - create the iccionary for rectangle
         """
-        return {'id': self.id, 'y': self.y, 'x': self.x, 'height': self.height, 'width': self.width}
-    
+        return {'id': self.id, 'y': self.y, 'x': self.x,
+                'height': self.height, 'width': self.width}
+
     @property
     def width(self):
         """
