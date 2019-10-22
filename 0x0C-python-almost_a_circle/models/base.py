@@ -6,8 +6,9 @@ Class Base - init the proces id
 
 
 class Base:
-    """ private class attribute """
+    # Create private attribute
     __nb_objects = 0
+
     def __init__(self, id=None):
         """
         init - init the constructor
@@ -27,7 +28,7 @@ class Base:
         if list_dictionaries is None:
             return []
         return json.dumps(list_dictionaries)
-    
+
     @staticmethod
     def from_json_string(json_string):
         """
@@ -45,14 +46,14 @@ class Base:
         file_name = str(cls.__name__) + ".json"
         with open(file_name, mode="w+", encoding="utf-8") as f:
             n_list = []
-            if list_objs == None:
+            if list_objs is None:
                 f.write(str(n_list))
             else:
                 for obj in list_objs:
                     data_json = obj.to_dictionary()
                     n_list.append(data_json)
                 f.write(cls.to_json_string(n_list))
-    
+
     @classmethod
     def create(cls, **dictionary):
         """
@@ -60,31 +61,34 @@ class Base:
         """
         # Verify if the cls is Rectangle
         if cls.__name__ == "Rectangle":
-            cls_name = cls(1, 1, 1, 1)
+            dummy = cls(1, 1, 1, 1)
         # Or is Square
         else:
-            cls_name = cls(1, 1, 1)
-        # Update the cls_name (Rectangle or Square)
+            dummy = cls(1, 1, 1)
+        # Update the dummy (Rectangle or Square)
         # and update using the public method update
-        cls_name.update(**dictionary)
-        return cls_name
+        dummy.update(**dictionary)
+        return dummy
 
     @classmethod
     def load_from_file(cls):
         """
         load_from_file - load the file and return a new list to exec
         """
+        # Create the namefile
         file_name = str(cls.__name__) + ".json"
+        # Try to open the file
         try:
+            # Read the file
             with open(file_name, mode="r", encoding="utf-8") as f:
+                # Create empty file
                 new_list = []
+                # Read the file
                 read_file = f.read()
                 new_file = cls.from_json_string(read_file)
                 for dic in new_file:
                     new_inst = cls.create(**dic)
                     new_list.append(new_inst)
                 return new_list
-        except:
+        except Exception:
             return []
-                    
-                
