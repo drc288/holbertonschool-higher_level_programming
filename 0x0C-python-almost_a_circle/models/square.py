@@ -1,34 +1,36 @@
 #!/usr/bin/python3
-from models.rectangle import Rectangle
 """
 Square - create a object square
 """
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """ Square """
+
     def __init__(self, size, x=0, y=0, id=None):
         """
         Init the constructor - super().__init__(size, size, x, y)
         call the super class
         """
         super().__init__(size, size, x, y)
-    
+
     def __str__(self):
         """
         __str__ - return the rectangle class str
         """
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
                                                  self.y, self.size)
-    
+
     def to_dictionary(self):
         """
         to_dictionary - create dictionary for square
         """
         return {'id': self.id, 'y': self.y, 'x': self.x, 'size': self.size}
-    
+
     def update(self, *args, **kwargs):
         """
-        update - update the Rectangle, 
+        update - update the Rectangle
         """
         # Get the len of args
         len_args = len(args)
