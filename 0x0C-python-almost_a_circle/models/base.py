@@ -61,10 +61,10 @@ class Base:
         """
         # Verify if the cls is Rectangle
         if cls.__name__ == "Rectangle":
-            dummy = cls(1, 1, 1, 1)
+            dummy = cls(1, 1)
         # Or is Square
         elif cls.__name__ == "Square":
-            dummy = cls(1, 1, 1)
+            dummy = cls(1)
         # Update the dummy (Rectangle or Square)
         # and update using the public method update
         dummy.update(**dictionary)
