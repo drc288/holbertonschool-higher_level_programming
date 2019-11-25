@@ -1,0 +1,1 @@
+-- Display the top 3 of city tmp avg
