@@ -4,8 +4,6 @@ import MySQLdb
 """
 This script connect to a database and print te obj
 """
-
-
 if __name__ == "__main__":
     # Get the data
     user = sys.argv[1]
@@ -22,10 +20,9 @@ if __name__ == "__main__":
     # working env
     cur = db.cursor()
     # Command to execute
-    cur.execute("SELECT * FROM states")
+    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
 
     # Get the rdata of the query and print
     rows = cur.fetchall()
     for row in rows:
         print(row)
-
