@@ -26,7 +26,6 @@ if __name__ == "__main__":
 
     # Get the rdata of the query and print
     rows = cur.fetchall()
-    print(rows)
     for row in rows:
         print(row)
 
