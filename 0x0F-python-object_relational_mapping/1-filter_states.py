@@ -23,8 +23,7 @@ if __name__ == "__main__":
         # PSDT: LIKE using and search the data with init n or N
         cur.execute("SELECT * "
                     "FROM states "
-                    "WHERE name "
-                    "LIKE BINARY 'n%' "
+                    "WHERE name LIKE BINARY 'N%' "
                     "ORDER BY states.id ASC")
         rows = cur.fetchall()
         # Print the data
