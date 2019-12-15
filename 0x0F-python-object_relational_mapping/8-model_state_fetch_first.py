@@ -23,15 +23,14 @@ if __name__ == "__main__":
     # Create the metadata of the connection eng
     Base.metadata.create_all(eng)
     new_session = sessionmaker(bind=eng)
-    se = new_session()
-    query = se.query(State)
+    Session = new_session()
+    query = Session.query(State)
 
-    data = dict()
+    # Create the fist element
+    first_obj = query.order_by(State.id).first()
 
-    for state in query.order_by(State.id).all():
-        data[state.id] = state.name
-
-    if len(data) == 0:
+    if first_obj:
+        print("{}: {}".format(first_obj.id, first_obj.name))
+    else:
         print()
 
-    print("{}: {}".format(1, data[1]))
