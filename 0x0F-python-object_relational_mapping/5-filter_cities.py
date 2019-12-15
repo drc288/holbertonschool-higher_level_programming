@@ -31,10 +31,7 @@ if __name__ == "__main__":
 
     # Get the data of the query and print
     rows = cur.fetchall()
-    rows_l = len(rows) - 1
+    n_list = []
     for row in rows:
-        if i != rows_l:
-            i += 1
-            print(row[0], end=", ")
-        else:
-            print(row[0])
+        n_list.append(row[0])
+    print(", ".join(n_list))
