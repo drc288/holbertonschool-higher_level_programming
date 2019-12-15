@@ -21,16 +21,15 @@ if __name__ == "__main__":
     )
 
     # Create the metadata of the connection eng
-    #---------CREATE-SESSION------------------
+    # ---------CREATE-SESSION------------------
     Base.metadata.create_all(eng)
     new_session = sessionmaker(bind=eng)
     Session = new_session()
-    #------------------------------------------
+    # ------------------------------------------
 
     # Create data and save
-    new_data = State(name = 'Louisiana')
+    new_data = State(name='Louisiana')
     Session.add(new_data)
     Session.commit()
 
     print(new_data.id)
-
