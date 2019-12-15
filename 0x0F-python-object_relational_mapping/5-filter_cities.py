@@ -26,7 +26,7 @@ if __name__ == "__main__":
     cur.execute("SELECT cities.name "
                 "FROM cities JOIN states "
                 "ON cities.state_id = states.id "
-                "WHERE states.name = %(state_n)s"
+                "WHERE states.name LIKE BINARY  %(state_n)s"
                 "ORDER BY cities.id", {'state_n': state_n})
 
     # Get the data of the query and print
@@ -37,4 +37,4 @@ if __name__ == "__main__":
             i += 1
             print(row[0], end=", ")
         else:
-            print(row[0]) 
+            print(row[0])
