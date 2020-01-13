@@ -8,4 +8,5 @@ from sys import argv
 hbtn_url = argv[1]
 if __name__ == "__main__":
     with urllib.request.urlopen(hbtn_url) as res:
-        print(res.headers.get("X-Request-Id"))
+        header = res.headers
+        print(header.get("X-Request-Id"))
