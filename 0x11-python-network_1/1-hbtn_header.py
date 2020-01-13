@@ -6,4 +6,4 @@ hbtn_url = argv[1]
 
 if __name__ == "__main__":
     with urllib.request.urlopen(hbtn_url) as res:
-        print(res.headers["X-Request-Id"])
+        print(res.headers.get("X-Request-Id"))
