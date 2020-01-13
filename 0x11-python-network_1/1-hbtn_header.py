@@ -2,11 +2,10 @@
 """ Point number 1
 """
 import urllib.request
-from sys import argv
+import sys
 
 
-hbtn_url = argv[1]
 if __name__ == "__main__":
-    with urllib.request.urlopen(hbtn_url) as res:
+    with urllib.request.urlopen(sys.argv[1]) as res:
         header = res.headers
         print(header.get("X-Request-Id"))
