@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-import requests
+import requests as req
 import sys
 
-res = requests.get(sys.argv[1])
-print(res.headers.get("X-Request-Id"))
+if __name__ == "__main__":
+    res = req.get(sys.argv[1])
+    header = res.headers
+    print(header.get("X-Request-Id"))
