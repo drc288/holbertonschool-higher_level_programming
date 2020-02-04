@@ -3,7 +3,6 @@
 const process = require('process');
 
 const argv = process.argv;
-const argc = argv.length;
 const num = parseInt(argv[2]);
 
 if (isNaN(num)) {
