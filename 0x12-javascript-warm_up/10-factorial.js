@@ -2,7 +2,7 @@
 const process = require('process');
 
 const argv = process.argv;
-function factorial (num) {
+function factorial (num = 0) {
   if (num === 0) {
     return 1;
   } else {
