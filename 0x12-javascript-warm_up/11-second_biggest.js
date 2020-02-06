@@ -16,6 +16,5 @@ if (argc === 2) {
   const unique = new Set(newArray);
   newArray = [...unique].sort((a, b) => { return a - b; });
   const lenArray = newArray.length;
-  console.log(newArray);
   console.log(newArray[lenArray - 2]);
 }
