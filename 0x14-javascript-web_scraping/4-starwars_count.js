@@ -4,7 +4,7 @@ const process = require('process');
 
 request(process.argv[2], (err, req, body) => {
   if (err) { console.log(err); }
-  let countList = [];
+  const countList = [];
   const films = JSON.parse(body).results;
 
   for (const film of films) {
